@@ -27,7 +27,7 @@ bool isGoalState(const std::vector<std::vector<int>>& board) {
 std::vector<State> getAdjacentStates(const State& state) {
     std::vector<State> adjacentStates;
     std::vector<std::pair<int, int>> directions = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
-    std::vector<std::string> directionNames = {"⇨", "⇦", "⇧", "⇩"};
+    std::vector<std::string> directionNames = {"⇩", "⇧", "⇨", "⇦"};
 
     for (int i = 0; i < 4; ++i) {
         std::pair<int, int>& direction = directions[i];
@@ -75,15 +75,6 @@ std::string solveNumberPuzzle(const std::vector<std::vector<int>>& initialBoard)
         }
         path.insert(currState.flatten);
 
-        if (currState.board[1][2] == 7 && currState.board[0][0] == 2) {
-            for (auto& row : currState.board) {
-                for (auto x : row) {
-                    std::cout << x << " ";
-                }
-                std::cout << std::endl;
-            }
-            std::cout << std::endl;
-        }
         if (isGoalState(currState.board)) {
             return currState.move;
         }

@@ -3,6 +3,7 @@
 #include <unordered_set>
 #include <unordered_map>
 #include <vector>
+#include <ctime>
 
 struct State {
     std::vector<std::vector<int>> board;
@@ -92,6 +93,7 @@ std::string solveNumberPuzzle(const std::vector<std::vector<int>>& initialBoard)
 }
 
 int main() {
+    int tt = clock();
     std::vector<std::vector<int>> initialBoard = {
         {8, 3, 2},
         {7, 0, 4},
@@ -100,6 +102,6 @@ int main() {
 
     std::string solution = solveNumberPuzzle(initialBoard);
     std::cout << solution << std::endl;
-
+    std::cout << "TIME: " << clock() - tt << std::endl;
     return 0;
 }

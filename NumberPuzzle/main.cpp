@@ -1,3 +1,4 @@
+// 控制台编码 UTF-8 chcp 65001
 #include <iostream>
 #include <queue>
 #include <unordered_set>
